@@ -57,7 +57,7 @@ yarn dev    # or: npm run dev
 
 ---
 
-## 🤖 CI/CD — What Happens on Push
+## CI/CD — What Happens on Push
 
 - The GitHub Actions workflow:
   1. Checks out your code

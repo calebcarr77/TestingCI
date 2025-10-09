@@ -10,11 +10,10 @@ A minimal **CI/CD pipeline** for a React + Vite + TypeScript app, automatically 
 
 - Node.js 18+ (or 20+)
 - Yarn or npm
-- A GitHub repository
 
 ---
 
-## 🚀 Quick Start (Local)
+## Quick Start (Local)
 
 ```bash
 # Clone the starter
@@ -31,7 +30,7 @@ yarn dev    # or: npm run dev
 
 ---
 
-## Configure for **GitHub Pages**
+## Configuration for **GitHub Pages**
 
 1. **Set the Vite `base` path**
 
@@ -84,7 +83,7 @@ yarn dev    # or: npm run dev
 
 ---
 
-## 📚 Resources
+## Resources
 
 - GitHub Actions — _Understand GitHub Actions_  
   https://docs.github.com/en/actions/get-started/understand-github-actions
@@ -93,7 +92,7 @@ yarn dev    # or: npm run dev
 
 ---
 
-## 📝 Notes
+## Notes
 
 - After you create your GitHub repository, **commit & push** this project.
 - The CI will run automatically on push to your default branch (usually `main`).

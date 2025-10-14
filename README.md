@@ -2,8 +2,6 @@
 
 A minimal **CI/CD pipeline** for a React + Vite + TypeScript app, automatically deployed to **GitHub Pages** via **GitHub Actions**.
 
-> Zero config servers. Push to `main` → build → deploy to Pages.
-
 ---
 
 ## Prerequisites

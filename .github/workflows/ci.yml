@@ -4,6 +4,16 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write 
+  id-token: write
+
+concurrency:
+  group: "pages"   
+  cancel-in-progress: true # Cancel any in-progress runs for this workflow when a new run is triggered
 
 jobs:
   test:
@@ -23,3 +33,29 @@ jobs:
 
       - name: Run Tests
         run: yarn test
+
+  build:
+      name: Build
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v5.0.0
+
+        - name: Set up Node.js
+          uses: actions/setup-node@v6.0.0
+          with:
+            node-version: 20
+
+        - name: Install packages
+          run: yarn
+
+        - name: Build 
+          env: 
+              VITE_API_BASE_URL: ${{ secrets.VITE_API_BASE_URL }}
+          run: yarn build
+
+        - name: Upload static files as artifact
+          id: deployment
+          uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
+          with:
+          path: build_outputs_folder/
